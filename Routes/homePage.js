@@ -37,13 +37,15 @@ route.post('/',async (req,res)=>{
             console.log(err);
         }
     })
-    // const result  = await outputCalculation()
-    // console.log(result.output)
-})
-route.get(`/output`,async (req,res)=>{
     const result  = await outputCalculation()
-    // console.log(result.output)
+    // console.log(result.output)   
     res.json(result)
-    
+
 })
+// route.get(`/output`,async (req,res)=>{
+//     // const result  = await outputCalculation()
+//     // // console.log(result.output)
+//     // res.json(result)
+    
+// })
 module.exports = route;

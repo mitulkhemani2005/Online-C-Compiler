@@ -22,15 +22,17 @@ document.getElementById('submit').addEventListener('click',async ()=>{
           parcel: code
         })
       })
-    }
-    sendData();
-    async function recOutput(){
-      const res = await fetch('http://localhost:5000/Online-C-Compiler/output',{
-        method:"GET",
-      })
-      const ans = await res.json();
-      console.log(ans)
+      const ans = await res.json()
+      // console.log(ans);
       document.getElementById("output").innerHTML=ans.output
     }
-    await recOutput();
+    sendData();
+    // async function recOutput(){
+    //   const res = await fetch('http://localhost:5000/Online-C-Compiler/output',{
+    //     method:"GET",
+    //   })
+    //   const ans = await res.json();
+    //   console.log(ans)
+    // }
+    // await recOutput();
 })
