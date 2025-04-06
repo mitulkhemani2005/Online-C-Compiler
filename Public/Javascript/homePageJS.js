@@ -11,7 +11,7 @@ require(['vs/editor/editor.main'], function () {
 
 document.getElementById('submit').addEventListener('click',async ()=>{
     const code = editor.getValue();
-    console.log(code)
+    // console.log(code)
     async function sendData(){
       const res = await fetch(`http://localhost:5000/Online-C-Compiler`,{
         method:"POST",
@@ -23,5 +23,14 @@ document.getElementById('submit').addEventListener('click',async ()=>{
         })
       })
     }
-    sendData();  
+    sendData();
+    async function recOutput(){
+      const res = await fetch('http://localhost:5000/Online-C-Compiler/output',{
+        method:"GET",
+      })
+      const ans = await res.json();
+      console.log(ans)
+      document.getElementById("output").innerHTML=ans.output
+    }
+    await recOutput();
 })

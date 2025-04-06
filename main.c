@@ -1,5 +1,6 @@
-// Write your C code here;// Write your C code here;
+// Write your C code here;
 #include<stdio.h>
-void main(){
-    printf("hello World!!!");
+int main (){
+    int num = 10;
+    printf("Hello World!! %d",num);
 }
